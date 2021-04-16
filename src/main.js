@@ -8,7 +8,8 @@ function createWindow () {
         webPreferences: {
             nodeIntegration: true,
             nodeIntegrationInWorker: true
-        }
+        },
+        vibrancy: "window",
     })
     win.maximize();
     win.loadFile('index.html')

@@ -6,10 +6,14 @@ const populateData = filesArr => {
     $blurredImageSection.find('.results_image-container').empty();
 
     for( var i = 0; i< filesArr.length ; i++){
-        let template = `<div class="image-card"><img src="${filesArr[i]}" /></div>`;
-        htmlArr.push(template)
-
+        let fileName = filesArr[i].split("/").pop();
+        let template = `<div class="image-card">
+                                <img src="${filesArr[i]}" title="${filesArr[i]}" />
+                                <div class="file-name">${fileName}</div>
+                                </div>`;
+        htmlArr.push(template);
     }
-    $blurredImageSection.find('.results_image-container').append(htmlArr.join(''))
+
+    $blurredImageSection.find('.results_image-container').empty().append(htmlArr.join(''))
     $blurredImageSection.show();
 }
