@@ -25,11 +25,13 @@ const populateUnoptimizedImages = filesArr => {
 
     imagesArr = filesArr;
     for( var i = 0; i< filesArr.length ; i++){
-        let template = `<div class="image-card"><img src="${filesArr[i]}" /></div>`;
+        let fileName = filesArr[i].split("/").pop();
+        let template = `<div class="image-card"><img src="${filesArr[i]}" />
+                                <div class="file-name">${fileName}</div></div>`;
         htmlArr.push(template)
 
     }
-    $unoptimizedImagesSection.find('.results_image-container').append(htmlArr.join(''))
+    $unoptimizedImagesSection.find('.results_image-container').empty().append(htmlArr.join(''))
     $unoptimizedImagesSection.show();
 }
 
@@ -50,6 +52,6 @@ $optimizeImageButton.on("click", ()=>{
             });
         }
     }
-    $unoptimizedImagesSection.find('.results_image-container').html("All processed");
+    $unoptimizedImagesSection.find('.result-place-holder').html("All the unoptimized images are optimized");
 });
 

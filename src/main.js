@@ -7,8 +7,10 @@ function createWindow () {
         title:"Digital garbage cleaner",
         webPreferences: {
             nodeIntegration: true,
-            nodeIntegrationInWorker: true
-        }
+            nodeIntegrationInWorker: true,
+            devTools: false,
+        },
+        vibrancy: "window",
     })
     win.maximize();
     win.loadFile('index.html')
