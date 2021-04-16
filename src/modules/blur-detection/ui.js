@@ -39,6 +39,6 @@ const  deleteFiles = arr => {
 
 $deleteBlurredImagesBtn.on("click", ()=>{
     deleteFiles( blurredFilesList );
-    $blurredImageSection.find('.result-place-holder').html("All the blurred images are deleted");
+    $blurredImageSection.find('.results_image-container').html("All the blurred images are deleted");
 })
 
