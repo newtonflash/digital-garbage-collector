@@ -1,0 +1,70 @@
+body{
+    font-size: 14px;
+}
+.side-bar{
+    background-color: #eee;
+    height: calc(100vh - 24px);
+    overflow: auto;
+    position: sticky;
+}
+.status-bar {
+    border-top:1px solid  #ccc;
+    font-size: small;
+    color: #666;
+    line-height: 23px;
+    padding: 0 15px;
+    margin: 0 -15px;
+}
+.side-bar > div {
+    padding: 20px 15px;
+    margin: 0 -15px;
+}
+
+.library-panel{
+    background-color: #ddd ;
+    border-bottom: 1px solid #ccc ;
+}
+
+input[type=checkbox]:disabled + label{
+    opacity: .6;
+    pointer-events: none;
+}
+.view-results-action{
+    margin: auto -15px;
+}
+
+.results-panel{
+    margin-bottom: 20px;
+    display: none;
+}
+.results-panel header{
+    padding: 15px 20px;
+    font-size: 20px;
+    background-color: #f9f9f9;
+}
+.results-panel footer{
+    padding: 10px 20px;
+    text-align: right;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-top:10px;
+}
+.results_image-container{
+    display: flex;
+}
+.image-card-section {
+    display: flex;
+    width: 100%;
+}
+.results_image-container .image-card{
+    flex: 0 0 30%;
+    padding: 10px;
+    max-width: 240px;
+}
+.image-card img{
+    max-width: 100%;
+    max-height: 120px;
+}
+.result-place-holder{
+    padding: 30px 30px;
+}

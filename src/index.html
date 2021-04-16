@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital gargbage cleaner</title>
+    <link href="styles/bootstrap.css" rel="stylesheet" />
+    <link href="styles/application-style.css" rel="stylesheet" />
+    <script>
+        window.$ = window.jQuery = require("./js/utils/jquery.js");
+    </script>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 side-bar">
+            <div class="library-panel">
+                <button class="btn btn-secondary" id="rootFolderSelector">Choose folders to check</button>
+                <div id="currentSelectionPath"></div>
+            </div>
+            <div>
+                <h3>Options</h3>
+                <div class="mt-1">
+                    <input type="checkbox" checked="checked" name="options" id="option_duplicate" value="duplicate"/>
+                    <label for="option_duplicate" >Duplicate images</label>
+                </div>
+                <div class="mt-1">
+                    <input type="checkbox" checked name="options" id="option_similar" value="similar"/>
+                    <label for="option_similar">Similar Images</label>
+                </div>
+                <div class="mt-1">
+                    <input type="checkbox" checked="checked" name="options"  id="option_blurred" value="blurred"/>
+                    <label for="option_blurred">Blurred images</label>
+                </div>
+                <div class="mt-1">
+                    <input type="checkbox" disabled name="options" id="option_dark_washed" value="dark_washed" />
+                    <label for="option_dark_washed">Dark/Washed out images</label>
+                </div>
+                <div class="mt-1">
+                    <input type="checkbox" checked name="options" id="option_unoptimized" value="unoptimized"/>
+                    <label for="option_unoptimized">Unoptimized images</label>
+                </div>
+                <div class="mt-1">
+                    <input type="checkbox" disabled name="options" id="option_abstract" value="abstract"/>
+                    <label for="option_abstract">Abstract images</label>
+                </div>
+                <hr />
+                <div>
+                    <button id="startSearchBtn" disabled class="btn btn-primary">Search unwanted files</button>
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="view-welcome-screen">
+                <div id="default-welcome-message" class="text-center mt-5">
+                    <h1>Digital Garbage Cleaner</h1>
+                    <p>Photographs Bot : Version-1.0.0</p>
+                </div>
+                <div class="mt-5">
+                    <h2>Getting started</h2>
+                    <ul class="text-black-50">
+                        <li>Click on the "Choose folders to check" button on the top left corner </li>
+                        <li>Select the filters to check your images</li>
+                        <li>After selecting the filters you can see respective results in this pannel</li>
+                        <li>Click the images to select, click one more time to deselect </li>
+                        <li>Click delete action to delete the images</li>
+                        <li>And you are done!!! Isn't it that simple!!!</li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="view-results-action">
+                <section id="duplicateImagesSection" class="results-panel">
+                    <header>Duplicate Images</header>
+                    <div class="results_image-container">
+
+                    </div>
+                    <footer>
+                        <button class="btn btn-danger" id="deleteDuplicateImagesButton">Delete duplicate images</button>
+                    </footer>
+                </section>
+                <section id="blurredImagesSection" class="results-panel">
+                    <header>Blurred Images</header>
+                    <div class="results_image-container">
+
+                    </div>
+                    <footer>
+                        <button class="btn btn-danger">Delete blurred images</button>
+                    </footer>
+                </section>
+                <section id="unoptimizedImagesSection" class="results-panel">
+                    <header>Unoptimized Images</header>
+                    <div class="results_image-container">
+                        <div class="result-place-holder">Finding unoptimized images</div>
+                    </div>
+                    <footer>
+                        <button class="btn btn-danger" id="optimizeImagesButton">Optimize images</button>
+                    </footer>
+                </section>
+                <section id="similarImagesSection" class="results-panel">
+                    <header>Similar Images</header>
+                    <div class="results_image-container">
+                        <div class="result-place-holder">Finding duplicate images</div>
+                    </div>
+                    <footer>
+                        <button class="btn btn-danger" id="removeSelectedSimilarImagesButton">Remove Selected images</button>
+                    </footer>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="status-bar">
+        <span class="total-images"><span id="totalImageCount">0</span> images in library</span>
+        <span class="dynamic-status"></span>
+    </div>
+</div>
+<script src="js/utils/lodash.min.js"></script>
+<script src="js/utils/drive-scanner.js"></script>
+<script src="modules/blur-detection/ui.js"></script>
+<script src="modules/unoptimized-image-detection/ui.js"></script>
+<script src="modules/duplicate-detection/ui.js"></script>
+<script src="modules/similar-image-detection/ui.js"></script>
+<script src="js/bootstrap.js"></script>
+
+
+</body>
+</html>
